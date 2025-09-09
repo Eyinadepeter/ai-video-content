@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <div>Home</div>
-      <Button variant="link">subscribe now ...</Button>
+      <Button variant="link">subscribe now .....</Button>
     </>
   );
 }
