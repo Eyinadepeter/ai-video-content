@@ -12,6 +12,7 @@ export default function Page() {
           height={500}
           className="object-contain w-full"
         />
+        <div></div>
       </div>
       <div className="justify-center flex items-center h-screen">
         <SignIn />
