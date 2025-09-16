@@ -1,7 +1,9 @@
+"use client";
+
 import { useUser } from "@clerk/nextjs";
 import React, { useEffect } from "react";
 import { db } from "@/configs/db";
-import { Users } from "@/configs/schema";
+
 import { EmailAddress } from "@clerk/nextjs/server";
 
 function provider({ children }) {
@@ -15,7 +17,7 @@ function provider({ children }) {
     const result = await db
       .select()
       .from(Users)
-      .where(eq(Users.email, user?.primaryEmailAddress?.emailAddress));
+      .where(eq(user.email, user?.primaryEmailAddress?.emailAddress));
 
     console.log(result);
 
