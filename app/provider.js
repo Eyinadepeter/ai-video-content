@@ -1,6 +1,16 @@
+import { useUser } from "@clerk/nextjs";
 import React from "react";
+import { db } from "@/configs/db";
+import { Users } from "@/configs/schema";
+import { EmailAddress } from "@clerk/nextjs/server";
 
 function provider({ children }) {
+  const { user } = useUser();
+
+  const isNewUser = async () => {
+    const result = await db.select().from(Users).where(eq(Users.email,user?.primaryEmailAddress?.emailAddress));
+  };
+
   return <div>{children}</div>;
 }
 
