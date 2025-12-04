@@ -8,6 +8,7 @@ function Home() {
       <div>Home</div>
       <Button variant="link">subscribe now </Button>
       <UserButton />
+
     </>
   );
 }
